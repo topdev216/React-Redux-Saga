@@ -1,0 +1,11 @@
+@import '~styles/settings/settings';
+
+.relatedPosts {
+  padding: $rem-xl 0;
+  background: $lighter-gray;
+  &__title {
+    margin-bottom: $rem-lg;
+    color: #3b3d40;
+    text-align: center;
+  }
+}

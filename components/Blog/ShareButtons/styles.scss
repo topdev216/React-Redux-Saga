@@ -1,0 +1,19 @@
+@import '~styles/settings/settings';
+
+.shareButtons {
+  &__title {
+    margin-bottom: $rem-tn;
+    text-transform: uppercase;
+    font-size: $fs-sm;
+    font-weight: bold;
+  }
+  &__items {
+    display: flex;
+  }
+  &__item {
+    cursor: pointer;
+    &:not(:first-child) {
+      margin-left: $rem-sm;
+    }
+  }
+}

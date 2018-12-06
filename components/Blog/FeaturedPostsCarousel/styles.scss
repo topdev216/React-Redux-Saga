@@ -1,0 +1,115 @@
+@import '~styles/settings/settings';
+
+.blogFeaturedPostsCarousel {
+  margin-bottom: $rem-xl;
+  &__item {
+    position: relative;
+    padding: $rem-xl $rem-md rem-calc(140);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    font-weight: normal;
+    font-size: $fs-base;
+    background-color: $darker-gray;
+    &:hover {
+      color: white;
+    }
+    @include breakpoint(medium) {
+      padding: rem-calc(60) $rem-gn;
+    }
+  }
+  &__bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.4;
+    background-position: center;
+    background-size: cover;
+  }
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+  &__title {
+    font-weight: 900;
+  }
+  &__excerpt {
+    margin-bottom: 0;
+    @include breakpoint(medium) {
+      font-size: rem-calc(26);
+    }
+  }
+  &__controls {
+    background-color: white;
+    border-radius: 0 0 $global-radius $global-radius;
+    @include column-padding;
+  }
+  &__control {
+    position: relative;
+    padding-top: $rem-mx;
+    padding-bottom: $rem-mx;
+    cursor: pointer;
+    &:not(:first-child) {
+      border-left: 1px solid $lighter-gray;
+    }
+    &--active {
+      &:after {
+        position: absolute;
+        top: -13px;
+        left: 50%;
+        margin-left: -13px;
+        @include css-triangle(13px, #fff, up);
+      }
+    }
+  }
+  &__thumb {
+    width: 60px;
+    height: 60px;
+    margin-top: rem-calc(7);
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+  }
+  &__category {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: $fs-sm;
+    &--0 {
+      color: $warning;
+    }
+    &--1 {
+      color: $purple;
+    }
+    &--2 {
+      color: $secondary;
+    }
+  }
+  .slick-dots {
+    bottom: rem-calc(35);
+    .slick-active button {
+      background-color: transparent;
+      border: 1px solid #cacaca;
+    }
+  }
+  .slick-arrow {
+    border: 2px solid #ababad;
+    color: #ababad;
+    border-radius: 50%;
+    background-color: transparent;
+    @include breakpoint(small only) {
+      top: auto;
+      margin-top: 0;
+      bottom: $rem-md;
+    }
+  }
+  .slick-prev {
+    left: $rem-xl;
+  }
+  .slick-next {
+    right: $rem-xl;
+  }
+}

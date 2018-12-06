@@ -1,0 +1,108 @@
+@import '~styles/settings/settings';
+
+.postHeader {
+  position: relative;
+  background-color: $darker-gray;
+  &__inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.4;
+  }
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding: $rem-xl $rem-md;
+    text-align: center;
+    color: white;
+    @include breakpoint(medium) {
+      padding-left: $rem-gn;
+      padding-right: $rem-gn;
+    }
+    @include breakpoint(large) {
+      padding-left: rem-calc(200);
+      padding-right: rem-calc(200);
+    }
+  }
+  &__category {
+    display: inline-flex;
+    padding-left: rem-calc(18);
+    padding-right: rem-calc(18);
+    margin-bottom: $rem-mn;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 999px;
+    font-size: $fs-sm;
+    font-weight: bold;
+    line-height: rem-calc(22);
+    text-transform: uppercase;
+  }
+  &__excerpt {
+    font-size: rem-calc(26);
+    line-height: rem-calc(34);
+  }
+  &__timeAgo {
+    color: inherit;
+    justify-content: center;
+  }
+  &__nav {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    background-color: #f0f2f7;
+    box-shadow: 0 2px 10px rgba(28, 30, 35, 0.25);
+    width: 306px;
+    height: 90px;
+    margin-top: -45px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.5s;
+    &--prev {
+      left: 0;
+      border-radius: 0 $global-radius $global-radius 0;
+      transform: translateX(-216px);
+    }
+    &--next {
+      right: 0;
+      border-radius: $global-radius 0 0 $global-radius;
+      transform: translateX(216px);
+    }
+    &:hover {
+      transform: translateX(0);
+      opacity: 1;
+      .postHeader__navImg {
+        opacity: 1;
+      }
+    }
+  }
+  &__navIcon {
+    color: $secondary;
+  }
+  &__navTitle {
+    display: block;
+    color: $body-font-color;
+    text-transform: none;
+    font-weight: normal;
+    line-height: 1.25;
+    font-size: $fs-base;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__navImgContainer {
+    background-color: white;
+  }
+  &__navImg {
+    width: 90px;
+    height: 90px;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.7;
+    transition: opacity 0.5s;
+  }
+}
